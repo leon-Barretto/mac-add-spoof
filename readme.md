@@ -1,36 +1,41 @@
-MAC Address Spoofing (Educational Demo)
-This project is for educational purposes only. Do not use these methods for unauthorized activity.
+# MAC Address Spoofing (Educational Demo)
 
-What this is
-As part of a penetration testing course, I practiced changing the MAC address of a device using Kali Linux. Spoofing a MAC address is a common step in network testing and evasion during security assessments.
+> **Note:** This project is for educational purposes only. Do not use these methods for unauthorized activity.
 
-Tools Used
-Operating system: Kali Linux
+## Overview
 
-Commands: ifconfig, sudo, ifconfig eth0 hw ether
+This project demonstrates how to change (spoof) the MAC address of a device using Kali Linux. This technique is commonly used in penetration testing to help with network testing and evasion.
 
-Screenshots
-The screenshots show:
+## Tools Used
 
-The original MAC address
+- **Operating System:** Kali Linux  
+- **Commands:** `ifconfig`, `sudo`, `ifconfig eth0 hw ether`
 
-The process and final result after changing it
+## Screenshots
 
-Screenshots are located in the screenshots/ folder.
+The screenshots provided show:  
+- The original MAC address  
+- The process of changing the MAC address  
+- The final result after the change
 
-Sensitive information like usernames and IP addresses has been blurred or removed.
+All screenshots are saved in the `screenshots/` folder.
 
-# Check network interfaces
+> Sensitive information such as usernames and IP addresses have been blurred or removed for privacy.
+
+## Commands
+
+```bash
+# List network interfaces and details
 ifconfig
 
 # Disable the network interface
 sudo ifconfig eth0 down
 
-# Change the MAC address
+# Change the MAC address to the desired value
 sudo ifconfig eth0 hw ether 00:11:22:33:44:55
 
-# Enable the network interface
+# Re-enable the network interface
 sudo ifconfig eth0 up
 
-# Verify the MAC address change
+# Confirm the MAC address has been changed
 ifconfig
